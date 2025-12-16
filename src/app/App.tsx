@@ -1,53 +1,48 @@
-import { TopNavBar } from "./components/TopNavBar";
-import { LeftSidebar } from "./components/LeftSidebar";
-import { ChatWorkspace } from "./components/ChatWorkspace";
-import { RightPanel } from "./components/RightPanel";
-import { EdTechContent } from "./components/EdTechContent";
-import { EdTechProducts } from "./components/EdTechProducts";
-import { Footer } from "./components/Footer";
-import { VideoLearningPanel } from "./components/VideoLearningPanel";
+import { CommandTopBar } from './components/CommandTopBar';
+import { AIVideoAssistant } from './components/AIVideoAssistant';
+import { JarvisCore } from './components/JarvisCore';
+import { YourNotes } from './components/YourNotes';
+import { MotivationSection } from './components/MotivationSection';
+import { FeatureCards } from './components/FeatureCards';
+import { MinimalFooter } from './components/MinimalFooter';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Top Navigation */}
-      <TopNavBar />
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Command Top Bar */}
+      <CommandTopBar />
 
-      {/* Main Layout */}
-      <div className="flex">
-        {/* Left Sidebar */}
-        <LeftSidebar />
-
-        {/* Main Content Area */}
-        <main className="ml-64 flex-1 pt-6 px-8 pb-0">
-          {/* Chat & Output Section */}
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 mb-8">
-            {/* Video Learning Panel - Left Extension */}
-            <div className="xl:col-span-3 h-[600px] overflow-hidden">
-              <VideoLearningPanel />
-            </div>
-
-            {/* Chat Workspace - Center */}
-            <div className="xl:col-span-6 h-[600px]">
-              <ChatWorkspace />
-            </div>
-
-            {/* Right Panel - AI Outputs */}
-            <div className="xl:col-span-3 h-[600px]">
-              <RightPanel />
-            </div>
+      {/* Main 3-Column Layout */}
+      <div className="pt-[57px]">
+        <div className="grid grid-cols-12 min-h-[calc(100vh-57px)]">
+          {/* LEFT - AI Video Assistant */}
+          <div className="col-span-2 bg-white shadow-sm">
+            <AIVideoAssistant />
           </div>
 
-          {/* EdTech Content Section */}
-          <EdTechContent />
+          {/* CENTER - Jarvis Core */}
+          <div className="col-span-7">
+            <JarvisCore />
+          </div>
 
-          {/* EdTech Products Section */}
-          <EdTechProducts />
-        </main>
+          {/* RIGHT - Your Notes */}
+          <div className="col-span-3 bg-white shadow-sm">
+            <YourNotes />
+          </div>
+        </div>
+
+        {/* Lower Sections */}
+        <div className="px-12 pb-8">
+          {/* Motivation Section */}
+          <MotivationSection />
+
+          {/* Feature Cards */}
+          <FeatureCards />
+        </div>
       </div>
 
       {/* Footer */}
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 }
