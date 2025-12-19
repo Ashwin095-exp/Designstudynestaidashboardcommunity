@@ -1,6 +1,7 @@
 import { Image, Presentation, Code, Video, GraduationCap, Mic, Send } from 'lucide-react';
 import { useState } from 'react';
-import robotAssistant from 'figma:asset/34477db71779a9d13477e16aa133c551b13a9724.png';
+import robot from "../../assets/Virtual-AI-assistant-removebg-preview.png";
+
 
 export function JarvisCore() {
   const [input, setInput] = useState('');
