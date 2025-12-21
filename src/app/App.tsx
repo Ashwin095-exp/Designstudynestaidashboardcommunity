@@ -37,7 +37,7 @@ export default function App() {
           <MotivationSection />
 
           {/* Feature Cards */}
-          <FeatureCards />
+          <ProductivitySection />
         </div>
       </div>
 
