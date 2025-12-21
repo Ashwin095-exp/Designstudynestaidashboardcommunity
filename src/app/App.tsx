@@ -1,9 +1,9 @@
 import { CommandTopBar } from './components/CommandTopBar';
 import { AIVideoAssistant } from './components/AIVideoAssistant';
 import { JarvisCore } from './components/JarvisCore';
-import { YourNotes } from './components/YourNotes';
+import { YourDeadlines } from './components/YourDeadlines';
 import { MotivationSection } from './components/MotivationSection';
-import { FeatureCards } from './components/FeatureCards';
+import { ProductivitySections } from './components/ProductivitySections';
 import { MinimalFooter } from './components/MinimalFooter';
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
 
           {/* RIGHT - Your Notes */}
           <div className="col-span-3 bg-white shadow-sm">
-            <YourNotes />
+            <YourDeadlines />
           </div>
         </div>
 
