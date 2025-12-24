@@ -1,11 +1,28 @@
+import { useState } from 'react';
 import { StickyNote, Plus, Calendar, FileText, AlertCircle, Folder } from 'lucide-react';
 
 export function YourNotes() {
-  const notes = [
-    { id: 1, title: 'Data Structures Recap', time: '2 hours ago' },
-    { id: 2, title: 'Python Tips', time: '1 day ago' },
-    { id: 3, title: 'Exam Prep Checklist', time: '2 days ago' }
-  ];
+ const [noteInput, setNoteInput] = useState('');
+const [notes, setNotes] = useState<
+  { id: number; title: string; time: string }[]
+>([]);
+
+  const addNote = () => {
+  if (noteInput.trim() === '') return;
+
+  setNotes([
+    {
+      id: Date.now(),
+      title: noteInput,
+      time: 'Just now'
+    },
+    ...notes
+  ]);
+
+  setNoteInput('');
+};
+
+
 
   const productivityItems = [
     { id: 1, type: 'deadline', title: 'Assignment Due', subtitle: 'Data Structures', time: 'Tomorrow', icon: Calendar, color: 'text-red-600 bg-red-50' },
@@ -27,18 +44,35 @@ export function YourNotes() {
           </button>
         </div>
 
+        <input
+  type="text"
+  value={noteInput}
+  onChange={(e) => setNoteInput(e.target.value)}
+  placeholder="Write a new note..."
+  className="w-full mb-3 p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
+/>
+
+
         <div className="space-y-3 mb-6">
           {notes.map((note) => (
             <div
-              key={note.id}
-              className="p-4 bg-gradient-to-br from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer"
-            >
+  key={note.id}
+  className="p-4 bg-gradient-to-br from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer"
+  onDoubleClick={() =>
+    setNotes(notes.filter((n) => n.id !== note.id))
+  }
+>
+
               <p className="font-medium text-gray-900 text-sm mb-1">{note.title}</p>
               <p className="text-xs text-gray-500">{note.time}</p>
             </div>
           ))}
 
-          <button className="w-full p-4 border-2 border-dashed border-gray-300 rounded-lg text-sm text-gray-500 hover:border-purple-400 hover:text-purple-600 hover:bg-purple-50/50 transition-all">
+<button
+  onClick={addNote}
+  className="p-1.5 hover:bg-gray-100 rounded-lg transition-all hover:scale-110"
+>
+
             + Add new note
           </button>
         </div>
