@@ -3,7 +3,7 @@ import { AIVideoAssistant } from './components/AIVideoAssistant';
 import { JarvisCore } from './components/JarvisCore';
 import { YourDeadlines } from './components/YourDeadlines';
 import { MotivationSections } from './components/MotivationSections';
-import { ProductivitySections } from './components/ProductivitySections';
+import { ProductivityPanel } from './components/ProductivityPanel';
 import { MinimalFooter } from './components/MinimalFooter';
 
 export default function App() {
@@ -37,7 +37,7 @@ export default function App() {
           <MotivationSections />
 
           {/* Feature Cards */}
-          <ProductivitySections />
+          <ProductivityPanel />
         </div>
       </div>
 
