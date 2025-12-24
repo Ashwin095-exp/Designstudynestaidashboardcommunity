@@ -63,17 +63,16 @@ export function MotivationSections() {
     <section ref={sectionRef} className="mt-20 mb-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {content.map((item, index) => (
-          <div
-            key={index}
-            className={``relative group bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 overflow-hidden cursor-pointer
-  transform transition-all duration-700 ease-out ${
-             isVisible
-  ? 'opacity-100 translate-y-0'
-  : 'opacity-0 translate-y-6'
+         <div
+  key={index}
+  className={`relative group bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 overflow-hidden cursor-pointer transform transition-all duration-700 ease-out ${
+    isVisible
+      ? 'opacity-100 translate-y-0'
+      : 'opacity-0 translate-y-6'
+  }`}
+  style={{ transitionDelay: `${index * 150}ms` }}
+>
 
-            }`}
-            style={{ animationDelay: `${index * 150}ms` }}
-          >
             <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-500"></div>
             <div className="relative">
               <Sparkles className="w-7 h-7 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
