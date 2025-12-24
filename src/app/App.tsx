@@ -2,7 +2,7 @@ import { CommandTopBar } from './components/CommandTopBar';
 import { AIVideoAssistant } from './components/AIVideoAssistant';
 import { JarvisCore } from './components/JarvisCore';
 import { YourDeadlines } from './components/YourDeadlines';
-import { MotivationSection } from './components/MotivationSection';
+import { MotivationSections } from './components/MotivationSections';
 import { ProductivitySections } from './components/ProductivitySections';
 import { MinimalFooter } from './components/MinimalFooter';
 
