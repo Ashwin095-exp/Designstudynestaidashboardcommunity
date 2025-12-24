@@ -33,7 +33,7 @@ export default function App() {
 
         {/* Lower Sections */}
         <div className="px-12 pb-8">
-          {/* Motivation Section */}
+          {/* Motivation Sections */}
           <MotivationSections />
 
           {/* Feature Cards */}
