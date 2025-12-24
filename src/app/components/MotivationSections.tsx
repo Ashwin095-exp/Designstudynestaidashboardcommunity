@@ -65,8 +65,12 @@ export function MotivationSections() {
         {content.map((item, index) => (
           <div
             key={index}
-            className={`relative group bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 overflow-hidden hover:scale-105 transition-all duration-500 cursor-pointer ${
-              isVisible ? 'animate-fade-in' : 'opacity-0'
+            className={``relative group bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 overflow-hidden cursor-pointer
+  transform transition-all duration-700 ease-out ${
+             isVisible
+  ? 'opacity-100 translate-y-0'
+  : 'opacity-0 translate-y-6'
+
             }`}
             style={{ animationDelay: `${index * 150}ms` }}
           >
